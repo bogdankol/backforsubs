@@ -188,7 +188,7 @@ export const resolvers = {
         pubSub.publish('cpuUpdatedContinuously', data)
         return data
 
-      }, 1000)
+      }, 2000)
     },
     updateRamContinuously: async (_: any, {id}: any) => {
       const {statusOfQuery} = await check.findOne({id: '1'}, {noCursorTimeout: false})
@@ -229,7 +229,7 @@ export const resolvers = {
         // console.log(data)
 
         // return data
-      }, 1000)
+      }, 2000)
     },
     updateStorageContinuously: async (_: any, {id}: any) => {
       const {statusOfQuery} = await check.findOne({id: '1'}, {noCursorTimeout: false})
@@ -265,7 +265,7 @@ export const resolvers = {
         const data = await storage.findOne({id}, {noCursorTimeout: false})
 
         pubSub.publish('storageUpdatedContinuously', data)
-      }, 1000)
+      }, 2000)
     }
   },
   Subscription: {
